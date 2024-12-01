@@ -435,7 +435,7 @@ class SyftObject(SyftObjectVersioned):
             new_object = api.services.migration._get_object(
                 uid=self.id, object_type=type(self)
             )
-            if type(new_object) == type(self):
+            if type(new_object) is type(self):
                 self.__dict__.update(new_object.__dict__)
         except Exception as _:
             return
