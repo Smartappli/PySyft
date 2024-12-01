@@ -273,7 +273,7 @@ def test_guest_user_update_to_root_email_failed(
 
 def test_user_view_set_password(worker: Worker, root_client: DatasiteClient) -> None:
     change_ok = root_client.account.set_password("123", confirm=False)
-    assert type(change_ok) == SyftSuccess
+    assert type(change_ok) is SyftSuccess
     assert "Successfully" in change_ok.message
 
     email = root_client.account.email
