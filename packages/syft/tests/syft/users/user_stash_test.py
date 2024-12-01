@@ -74,7 +74,7 @@ def test_userstash_get_by_uid(
     assert result.is_err()
 
     exc = result.err()
-    assert type(exc) == NotFoundException
+    assert type(exc) is NotFoundException
     assert exc.public_message
 
 
@@ -98,7 +98,7 @@ def test_userstash_get_by_email(
 
     exc = result.err()
     assert result.is_err()
-    assert type(exc) == NotFoundException
+    assert type(exc) is NotFoundException
     assert "not found" in exc.public_message
 
 
@@ -130,7 +130,7 @@ def test_userstash_get_by_signing_key(
 
     exc = result.err()
     assert result.is_err()
-    assert type(exc) == NotFoundException
+    assert type(exc) is NotFoundException
     assert exc.public_message
 
 
@@ -161,7 +161,7 @@ def test_userstash_get_by_verify_key(
     )
     searched_user = result.err()
     assert result.is_err()
-    assert type(searched_user) == NotFoundException
+    assert type(searched_user) is NotFoundException
     assert searched_user.public_message
 
 
