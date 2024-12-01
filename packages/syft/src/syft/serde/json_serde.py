@@ -298,7 +298,7 @@ def _is_serializable_mapping(annotation: Any) -> bool:
     - the key type is str
     - the value type is serializable and not a Union
     """
-    if get_origin(annotation) != dict:
+    if get_origin(annotation) is not dict:
         return False
 
     args = get_args(annotation)
