@@ -322,7 +322,7 @@ def test_settings_user_register_for_role(monkeypatch: MonkeyPatch, faker: Faker)
             password=password,
             password_verify=password,
         )
-        assert type(result) == UserView
+        assert type(result) is UserView
 
         guest_client = root_client.guest()
         return guest_client.login(email=email, password=password)
