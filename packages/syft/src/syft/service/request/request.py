@@ -974,7 +974,7 @@ class Request(SyncableSyftObject):
                 f"accept_by_depositing_result can only be run on {UserCodeStatusCollection} not "
                 f"{user_code_status_change.linked_obj.object_type}"
             )
-        if not type(user_code_status_change) == UserCodeStatusChange:
+        if not type(user_code_status_change) is UserCodeStatusChange:
             raise TypeError(
                 f"accept_by_depositing_result can only be run on {UserCodeStatusChange} not "
                 f"{type(user_code_status_change)}"
