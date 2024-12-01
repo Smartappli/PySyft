@@ -1364,7 +1364,7 @@ def validate_callable_args_and_kwargs(
                     _check_type(value, t)
                 except ValueError:
                     # TODO: fix this properly
-                    if not (t == type(Any)):
+                    if not (t is type(Any)):
                         _type_str = getattr(t, "__name__", str(t))
                         raise SyftException(
                             public_message=f"`{key}` must be of type `{_type_str}` not `{type(value).__name__}`"
