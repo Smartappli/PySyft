@@ -37,7 +37,7 @@ def test_constant(worker) -> None:
     constant = create_constant.to_policy_rule("test")
 
     assert constant.val == 2
-    assert constant.klass == int
+    assert constant.klass is int
 
     create_constant = CreatePolicyRuleConstant(
         val=root_client.api.services.test.test_query
