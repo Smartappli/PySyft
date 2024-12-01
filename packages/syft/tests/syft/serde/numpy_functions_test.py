@@ -91,7 +91,7 @@ def test_numpy_functions(func, func_arguments, request):
 
     except Exception as e:
         assert (
-            e == AttributeError
+            e is AttributeError
         ), f"Can not evaluate {func}({func_arguments}) with {e}"
         print(e)
     else:
